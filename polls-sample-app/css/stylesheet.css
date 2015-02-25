@@ -1,0 +1,95 @@
+body {
+  margin: 15px;
+}
+
+
+
+h1 {
+  font-family: impact;
+  top: 30px;
+}
+
+.login-textbox{
+    padding: 2px;
+    width: 40%;
+    height: 24px;
+    border: 2px solid #000000;
+}
+
+.login-textbox:focus {
+  border: 3px solid #8096ff;
+}
+
+textarea{
+    width:100%;
+    min-width: 400px;
+}
+
+
+.main>div {
+    margin-bottom: 15px;
+}
+.side {
+    float:right;
+}
+
+
+
+
+
+
+.sendmessage {
+
+}
+
+.table {
+    position: relative;
+    display: inline-block;
+    font-family: 'Pacifico', cursive;;
+    font-weight: 400;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    margin-left: 80px;
+
+}
+
+
+
+input[type=button] {
+  border-radius: 10%;
+  color: #fff;
+  border-style: hidden;
+  transition: ease .5s;
+  -webkit-transition: ease .5s;
+  -moz-transition: ease .5s;
+  -o-transition: ease .5s;
+  -ms-transition: ease .5s;
+
+}
+
+input[type=button]:hover {
+	transform: scale(1.2, 1.2);
+	-webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+}
+
+input[type=button]:active {
+	box-shadow: 2px 5px 8px grey inset;
+	border-style: none;
+}
+
+#btnConnect {
+  background: rgb(28, 184, 65);
+}
+
+#btnDisonnect {
+  background: rgb(202, 60, 60);
+}
+
+.btnStyle {
+   background: rgb(66, 184, 221);
+}
+
+

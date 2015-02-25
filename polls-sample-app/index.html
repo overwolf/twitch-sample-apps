@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>TwitchChat Plugin Poll Sample</title>
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<embed  id="chatPlugin"
+			type="application/x-twitchchat-plugin"
+			width=0px
+			height=0px>
+	</embed>
+
+	<div class="main">
+		<h1 id="title"></h1>
+		<h1 id="status">Status: Disconnected from chat</h1>
+		<div class="login-credentials">
+			<input type="text" id="txtUser" placeholder="User" class="login-textbox" tabindex="1">
+			<input type="password" id="txtPassword" placeholder="Password" class="login-textbox" tabindex="2">
+		</div>
+		<div class="login-buttons">
+			<input type="text" id="txtTimer" placeholder="Time" class="login-textbox" tabindex="3">
+			<input type="text" id="txtQuestion" placeholder="Question" class="login-textbox" tabindex="4">
+			<input type="text" id="txtOption1" placeholder="Option1" class="login-textbox" tabindex="5">
+			<input type="text" id="txtOption2" placeholder="Option2" class="login-textbox" tabindex="6">
+			<input type="button" class="btnStyle" id="btnStartPoll" value="Start Poll" tabindex="7">
+		</div>
+
+		<textarea id="textareaMessage" rows="10" readonly="true"></textarea>
+		<div class="sendmessage">
+			<input type="text" id="txtMessage">
+			<input type="button" class="btnStyle" id="btnSendMessage" value="Send">
+		</div>
+	</div>
+
+	<script src="scripts/main.js"></script>
+
+</body>
+</html>

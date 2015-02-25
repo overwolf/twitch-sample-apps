@@ -1,0 +1,108 @@
+init plugin:
+============
+
+<body>
+<embed  id="plugin"
+		type="application/x-twitchchat-plugin"
+		width=0px
+		height=0px>
+</embed>
+</body>
+
+Functions:
+==========
+plugin.chatConnect(username, channel, token, function (e, error) {
+		if (e) {
+			console.log("Connected");
+		}
+		else {
+			console.log("Disconnected: " + error);
+		}
+	}
+)
+plugin.chatDisconnect(function (e, error) {
+	console.log("disconnect callbak:", e, error)
+});
+
+plugin.chatSendMessage(message, function (e) {});
+
+callbacks:
+==========
+
+plugin.onChatStateChanged = function (e, error) {
+	if (e) {
+		document.querySelector('#status').innerText = "Status: Connected";
+	}
+	else {
+		document.querySelector('#status').innerText = "Status: Disconnected - " + error;
+		userList = [];
+	}
+	console.log("ChatStateChanged", e, error);
+};
+
+// connection state changed (connect / disconnected
+plugin.onChatStateChanged = function (e, error) {
+	console.log("Connection state changed:", e, error);
+}
+
+
+//chat message recived
+// msg object:
+{
+    "color": "ff1e90ff", //ARGB
+    "action": false,
+    "userName": "username",
+    "message": "XXXXX",
+    "badges": [
+        "mod",
+        "broadcaster"
+    ]
+}
+plugin.onChatMessageReceived = function (msg) {
+	var message = JSON.parse(msg);
+	
+	console.log("ChatMessageReceived", e);	
+};
+
+
+//user join/left/update callbak
+// list of users.
+{
+    "users": [
+        {
+            "disaplyName": "display name",
+            "color": "ff1e90ff",// ARGB 
+			
+			// "modes" is  bit enum 
+			// VIEWER		= 0,		A regulare viewer.
+			// MODERATOR	= 1 << 0,	A moderator.
+			// BROADCASTER	= 1 << 1,	The broadcaster.
+			// ADMINSTRATOR	= 1 << 2,	An admin.
+			// STAFF		= 1 << 3,	A member of Twitch.
+			// BANNED		= 1 << 30	The user has been banned.  This flag may not always be up to date.
+            "modes": 3, // bit enum 
+			
+			// "subscription" is  bit enum 
+			// NONE		    = 0,		standard user.
+			// SUBSCRIBER	= 1 << 0,	A subscriber in the current channel.
+			// TURBO		= 1 << 1,	 A Twitch Turbo account.
+			"subscription" : 0,
+			
+            "ignore": false // Whether or not to ignore the user (0/1)
+        }
+    ]
+}
+plugin.onUsersJoinChannel = function (e) {
+	var newUser = JSON.parse(e);
+	console.log("onUsersJoinChannel JSON:", newUser);
+};
+
+plugin.onUsersLeftChannel = function (e) {
+	var leftUsser = JSON.parse(e);
+	console.log("onUsersLeftChannel JSON:",leftUsser);
+};
+
+plugin.onUsersUpdated = function (e) {
+	var updateUser = JSON.parse(e);
+
+};
