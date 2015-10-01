@@ -1,5 +1,5 @@
 (function() {
-    navigator.plugins.refresh(true);
+    
     document.querySelector('#btnConnect').addEventListener("click", connect);
     document.querySelector('#btnDisconnect').addEventListener("click", disconnect);
     document.querySelector('#btnSendMessage').addEventListener("click", sendMessage);

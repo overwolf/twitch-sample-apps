@@ -2,7 +2,7 @@
     //
     // Loading and initializing the NPAPI plugin.
     //
-    navigator.plugins.refresh(true);
+    
 
     var chatPlugin = document.querySelector('#chatPlugin');
 
